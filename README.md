@@ -1,24 +1,39 @@
-________________________________________
-📊 Data Warehouse & Analytics Project
-A modern SQL Data Warehouse implementation using Medallion Architecture (Bronze, Silver, Gold) to transform raw business data into analytics-ready insights.
-This project demonstrates real-world data engineering workflows, including data ingestion, transformation, data modeling, and analytical reporting using SQL.
-The goal is to simulate how organizations build scalable data pipelines and data warehouses to support business intelligence and decision-making.
-________________________________________
-🚀 Project Overview
-This project builds a SQL Server-based Data Warehouse that integrates sales data from multiple business systems and prepares it for analytics.
+
+# 📊 Data Warehouse & Analytics Project
+
+A **modern SQL Data Warehouse implementation** using **Medallion Architecture (Bronze, Silver, Gold)** to transform raw business data into analytics-ready insights.
+
+This project demonstrates **real-world data engineering workflows**, including **data ingestion, transformation, data modeling, and analytical reporting using SQL**.
+
+The goal is to simulate how organizations build **scalable data pipelines and data warehouses** to support **business intelligence and decision-making**.
+
+---
+
+# 🚀 Project Overview
+
+This project builds a **SQL Server-based Data Warehouse** that integrates sales data from multiple business systems and prepares it for analytics.
+
 The project demonstrates the following core data engineering concepts:
-•	Designing a modern data warehouse architecture
-•	Building ETL pipelines
-•	Cleaning and transforming raw data
-•	Creating fact and dimension tables
-•	Generating business insights using SQL
+
+* Designing a **modern data warehouse architecture**
+* Building **ETL pipelines**
+* Cleaning and transforming raw data
+* Creating **fact and dimension tables**
+* Generating **business insights using SQL**
+
 The final dataset enables analysis of:
-•	Customer behavior
-•	Product performance
-•	Sales trends
-________________________________________
-🏗️ Data Architecture
-The project follows the Medallion Architecture, a widely used design pattern in modern data platforms.
+
+* Customer behavior
+* Product performance
+* Sales trends
+
+---
+
+# 🏗️ Data Architecture
+
+The project follows the **Medallion Architecture**, a widely used design pattern in modern data platforms.
+
+```
 Source Data (CSV Files)
         ↓
 Bronze Layer (Raw Data)
@@ -26,67 +41,120 @@ Bronze Layer (Raw Data)
 Silver Layer (Cleaned & Standardized Data)
         ↓
 Gold Layer (Analytics & Reporting Models)
-Each layer improves data quality, structure, and usability.
-________________________________________
-🥉 Bronze Layer – Raw Data
-The Bronze layer stores raw data exactly as it comes from source systems.
+```
+
+Each layer improves **data quality, structure, and usability**.
+
+---
+
+# 🥉 Bronze Layer – Raw Data
+
+The **Bronze layer** stores raw data exactly as it comes from source systems.
+
 Characteristics:
-•	Data is ingested directly from CSV files
-•	No transformations are applied
-•	Raw data is preserved for auditing and reprocessing
+
+* Data is ingested directly from **CSV files**
+* No transformations are applied
+* Raw data is preserved for auditing and reprocessing
+
 Purpose:
-•	Maintain data lineage
-•	Preserve original datasets
-•	Enable reprocessing if transformations change
+
+* Maintain **data lineage**
+* Preserve **original datasets**
+* Enable **reprocessing if transformations change**
+
 Example tables:
+
+```
 bronze.crm_customers
 bronze.crm_sales
 bronze.erp_products
-________________________________________
-🥈 Silver Layer – Cleaned Data
-The Silver layer performs data cleaning and transformation.
+```
+
+---
+
+# 🥈 Silver Layer – Cleaned Data
+
+The **Silver layer** performs **data cleaning and transformation**.
+
 Operations include:
-•	Removing duplicates
-•	Standardizing formats
-•	Handling missing values
-•	Fixing incorrect data types
-•	Normalizing datasets
+
+* Removing duplicates
+* Standardizing formats
+* Handling missing values
+* Fixing incorrect data types
+* Normalizing datasets
+
 Purpose:
-Transform raw operational data into structured datasets suitable for analytics.
+
+Transform **raw operational data into structured datasets** suitable for analytics.
+
 Example transformations:
+
+```
 TRIM() – remove extra spaces
 CAST() – fix incorrect data types
 CASE statements – handle missing values
 JOIN – combine multiple datasets
+```
+
 Example tables:
+
+```
 silver.customers
 silver.products
 silver.sales
-________________________________________
-🥇 Gold Layer – Business Analytics
-The Gold layer contains business-ready datasets optimized for analytics.
-Data is modeled using a Star Schema consisting of:
-Fact Tables
+```
+
+---
+
+# 🥇 Gold Layer – Business Analytics
+
+The **Gold layer** contains **business-ready datasets optimized for analytics**.
+
+Data is modeled using a **Star Schema** consisting of:
+
+### Fact Tables
+
 Store measurable business metrics.
+
 Examples:
+
+```
 fact_sales
+```
+
 Metrics include:
-•	sales amount
-•	quantity sold
-•	revenue
-________________________________________
-Dimension Tables
+
+* sales amount
+* quantity sold
+* revenue
+
+---
+
+### Dimension Tables
+
 Provide descriptive context for facts.
+
 Examples:
+
+```
 dim_customers
 dim_products
 dim_dates
+```
+
 These allow analysts to perform queries like:
-•	Total sales by product
-•	Revenue by region
-•	Monthly sales trends
-________________________________________
-📦 Repository Structure
+
+* Total sales by product
+* Revenue by region
+* Monthly sales trends
+
+---
+
+# 📦 Repository Structure
+
+```
 DATA-WAREHOUSEING
 │
 ├── datasets
@@ -113,36 +181,60 @@ DATA-WAREHOUSEING
 │   └── data quality tests
 │
 └── README.md
-________________________________________
-⚙️ Technologies Used
-Technology	Purpose
-SQL Server	Database engine
-T-SQL	Data transformation & analytics
-SQL Server Management Studio (SSMS)	Database management
-Draw.io	Architecture diagrams
-Git & GitHub	Version control
-CSV datasets	Source data
-________________________________________
-🔄 ETL Pipeline Workflow
-The project implements a complete ETL pipeline:
-Extract
+```
+
+---
+
+# ⚙️ Technologies Used
+
+| Technology                          | Purpose                         |
+| ----------------------------------- | ------------------------------- |
+| SQL Server                          | Database engine                 |
+| T-SQL                               | Data transformation & analytics |
+| SQL Server Management Studio (SSMS) | Database management             |
+| Draw.io                             | Architecture diagrams           |
+| Git & GitHub                        | Version control                 |
+| CSV datasets                        | Source data                     |
+
+---
+
+# 🔄 ETL Pipeline Workflow
+
+The project implements a **complete ETL pipeline**:
+
+### Extract
+
 Raw data extracted from:
-•	CRM system
-•	ERP system
-Provided as CSV datasets.
-________________________________________
-Transform
+
+* CRM system
+* ERP system
+
+Provided as **CSV datasets**.
+
+---
+
+### Transform
+
 Data transformations include:
-•	Cleaning duplicates
-•	Fixing null values
-•	Standardizing formats
-•	Integrating datasets
-________________________________________
-Load
-Processed data is loaded into analytics-ready tables in the Gold layer.
-________________________________________
-📊 Example Analytics Query
+
+* Cleaning duplicates
+* Fixing null values
+* Standardizing formats
+* Integrating datasets
+
+---
+
+### Load
+
+Processed data is loaded into **analytics-ready tables in the Gold layer**.
+
+---
+
+# 📊 Example Analytics Query
+
 Example SQL query to analyze product sales performance:
+
+```sql
 SELECT 
     p.product_name,
     SUM(f.sales_amount) AS total_sales
@@ -151,91 +243,173 @@ JOIN gold.dim_products p
 ON f.product_key = p.product_key
 GROUP BY p.product_name
 ORDER BY total_sales DESC;
-This query calculates total revenue generated by each product.
-________________________________________
-📈 Business Insights Enabled
+```
+
+This query calculates **total revenue generated by each product**.
+
+---
+
+# 📈 Business Insights Enabled
+
 The data warehouse enables analysis of:
-Customer Behavior
-•	Top customers by revenue
-•	Customer purchasing patterns
-Product Performance
-•	Best selling products
-•	Category level performance
-Sales Trends
-•	Monthly sales growth
-•	Seasonal demand patterns
-________________________________________
-🧠 Key Skills Demonstrated
+
+### Customer Behavior
+
+* Top customers by revenue
+* Customer purchasing patterns
+
+### Product Performance
+
+* Best selling products
+* Category level performance
+
+### Sales Trends
+
+* Monthly sales growth
+* Seasonal demand patterns
+
+---
+
+# 🧠 Key Skills Demonstrated
+
 This project demonstrates expertise in:
-•	Data Warehouse Architecture
-•	SQL Development
-•	ETL Pipeline Design
-•	Data Cleaning & Transformation
-•	Star Schema Data Modeling
-•	Analytical SQL Queries
-•	Data Engineering Best Practices
-________________________________________
-▶️ How to Run the Project
-1️⃣ Install Required Tools
+
+* Data Warehouse Architecture
+* SQL Development
+* ETL Pipeline Design
+* Data Cleaning & Transformation
+* Star Schema Data Modeling
+* Analytical SQL Queries
+* Data Engineering Best Practices
+
+---
+
+# ▶️ How to Run the Project
+
+### 1️⃣ Install Required Tools
+
 Install:
-•	SQL Server Express
-•	SQL Server Management Studio (SSMS)
-________________________________________
-2️⃣ Clone the Repository
+
+* SQL Server Express
+* SQL Server Management Studio (SSMS)
+
+---
+
+### 2️⃣ Clone the Repository
+
+```bash
 git clone https://github.com/Sanjay5704/DATA-WAREHOUSEING
-________________________________________
-3️⃣ Initialize the Database
+```
+
+---
+
+### 3️⃣ Initialize the Database
+
 Run the initialization script inside SSMS.
+
+```
 scripts/init_database.sql
-________________________________________
-4️⃣ Load Raw Data
+```
+
+---
+
+### 4️⃣ Load Raw Data
+
 Run the Bronze layer scripts to ingest raw datasets.
+
+```
 scripts/bronze/
-________________________________________
-5️⃣ Transform Data
+```
+
+---
+
+### 5️⃣ Transform Data
+
 Execute Silver layer scripts to clean and standardize data.
+
+```
 scripts/silver/
-________________________________________
-6️⃣ Build Analytics Tables
+```
+
+---
+
+### 6️⃣ Build Analytics Tables
+
 Run Gold layer scripts to create analytical models.
+
+```
 scripts/gold/
-________________________________________
-🧪 Running Tests
+```
+
+---
+
+# 🧪 Running Tests
+
 Data validation tests can be executed from:
+
+```
 tests/
+```
+
 These scripts check:
-•	data quality
-•	duplicates
-•	schema validation
-________________________________________
-⚠️ Known Limitations
+
+* data quality
+* duplicates
+* schema validation
+
+---
+
+# ⚠️ Known Limitations
+
 Current version focuses on:
-•	latest dataset snapshot
-•	batch data loading
+
+* latest dataset snapshot
+* batch data loading
+
 Future improvements may include:
-•	incremental ETL pipelines
-•	historical tracking (Slowly Changing Dimensions)
-•	BI dashboards
-________________________________________
-📌 Improvements Added
+
+* incremental ETL pipelines
+* historical tracking (Slowly Changing Dimensions)
+* BI dashboards
+
+---
+
+# 📌 Improvements Added
+
 Compared to the original tutorial project:
-•	Added detailed SQL comments explaining transformations
-•	Improved documentation for readability
-•	Enhanced code clarity for learning purposes
-________________________________________
-👨‍💻 Author
-Sanjay Sathish Kumar
+
+* Added **detailed SQL comments explaining transformations**
+* Improved **documentation for readability**
+* Enhanced **code clarity for learning purposes**
+
+---
+
+# 👨‍💻 Author
+
+**Sanjay Sathish Kumar**
+
 IT Student | Data Engineering & Analytics Enthusiast
+
 GitHub
-https://github.com/Sanjay5704
+[https://github.com/Sanjay5704](https://github.com/Sanjay5704)
+
 LinkedIn
-www.linkedin.com/in/sanjaysathishkumar
+[www.linkedin.com/in/sanjaysathishkumar](http://www.linkedin.com/in/sanjaysathishkumar)
+
 Email
-sanjay.jsm57@gmail.com
-________________________________________
-📜 License
-This project is licensed under the MIT License.
-________________________________________
-⭐ If you like this project
+[sanjay.jsm57@gmail.com](mailto:sanjay.jsm57@gmail.com)
+
+---
+
+# 📜 License
+
+This project is licensed under the **MIT License**.
+
+---
+
+# ⭐ If you like this project
+
 Give the repository a ⭐ on GitHub!
-________________________________________
+
+---
+
