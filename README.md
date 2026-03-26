@@ -272,7 +272,7 @@ The data warehouse enables analysis of:
 
 # 🧠 Key Skills Demonstrated
 
-This project demonstrates expertise in:
+This project demonstrates practical skills in:
 
 * Data Warehouse Architecture
 * SQL Development
@@ -395,9 +395,6 @@ GitHub
 
 LinkedIn
 [www.linkedin.com/in/sanjaysathishkumar](http://www.linkedin.com/in/sanjaysathishkumar)
-
-Email
-[sanjay.jsm57@gmail.com](mailto:sanjay.jsm57@gmail.com)
 
 ---
 
