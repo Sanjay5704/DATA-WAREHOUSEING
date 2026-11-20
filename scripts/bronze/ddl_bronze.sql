@@ -7,7 +7,7 @@ Script Purpose:
     if they already exist.
 	  Run this script to re-define the DDL structure of 'bronze' Tables
 WARNING:
-	Make sure that you r in DataWarehouse DB
+	Make sure you are connected to the DataWarehouse database.
 ===============================================================================
 */
 
