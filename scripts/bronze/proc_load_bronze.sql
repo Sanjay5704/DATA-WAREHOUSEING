@@ -13,7 +13,7 @@ Parameters:
                     (the repo's datasets folder on your machine).
 
 Usage Example:
-    EXEC bronze.load_bronze @dataset_path = 'C:\path\to\sql-data-warehouse\datasets\';
+    EXEC bronze.load_bronze @dataset_path = 'C:\path\to\DATA-WAREHOUSEING\datasets\';
 ===============================================================================
 */
 

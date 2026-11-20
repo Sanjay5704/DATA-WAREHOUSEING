@@ -84,7 +84,7 @@ Compared with the original tutorial code:
 
 - **Configurable dataset path.** The tutorial's `bronze.load_bronze` hard-codes the CSV folder. I added an `@dataset_path` parameter and switched to dynamic `BULK INSERT`, so the procedure works on any machine without editing the code:
   ```sql
-  EXEC bronze.load_bronze @dataset_path = 'C:\path\to\sql-data-warehouse\datasets\';
+  EXEC bronze.load_bronze @dataset_path = 'C:\path\to\DATA-WAREHOUSEING\datasets\';
   ```
 - **Analysis queries.** I added `scripts/analysis/business_insights.sql`, which answers questions about category share, revenue per customer by country, top products and yearly trend. The README reports the actual results.
 - **Repo clean-up.** I gave all scripts the `.sql` extension and kept them in one `scripts/` folder. I also fixed wrong header comments, such as the Silver DDL header that said "bronze".
@@ -95,7 +95,7 @@ Compared with the original tutorial code:
 ## Repository structure
 
 ```
-sql-data-warehouse/
+DATA-WAREHOUSEING/
 ├── datasets/
 │   ├── source_crm/          # cust_info, prd_info, sales_details
 │   └── source_erp/          # CUST_AZ12, LOC_A101, PX_CAT_G1V2
@@ -117,12 +117,12 @@ You need SQL Server (Express is fine) and SSMS.
 
 1. Clone the repo.
    ```bash
-   git clone https://github.com/Sanjay5704/sql-data-warehouse.git
+   git clone https://github.com/Sanjay5704/DATA-WAREHOUSEING.git
    ```
 2. Run `scripts/init_database.sql`. **Warning:** this drops and recreates the `DataWarehouse` database.
 3. Run `scripts/bronze/ddl_bronze.sql` and `scripts/bronze/proc_load_bronze.sql`, then load the data:
    ```sql
-   EXEC bronze.load_bronze @dataset_path = 'C:\path\to\sql-data-warehouse\datasets\';
+   EXEC bronze.load_bronze @dataset_path = 'C:\path\to\DATA-WAREHOUSEING\datasets\';
    ```
    The SQL Server service account needs read access to that folder.
 4. Run `scripts/silver/ddl_silver.sql` and `scripts/silver/proc_load_silver.sql`, then:
